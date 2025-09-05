@@ -29,7 +29,7 @@ Aturan penting:
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: "deepseek/deepseek-r1-0528:free",
+        model: "google/gemini-2.0-flash-exp:free",
         messages: [{ role: "user", content: message }],
       }),
     });
