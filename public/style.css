@@ -103,3 +103,28 @@ button:hover {
 #recipe-card button:hover {
   background-color: rgb(184, 47, 47);
 }
+
+#recipe-text {
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+#recipe-text h2 {
+  font-size: 20px;
+  margin-top: 16px;
+}
+
+#recipe-text h3 {
+  font-size: 18px;
+  margin-top: 12px;
+}
+
+#recipe-text ul {
+  margin-left: 20px;
+  list-style-type: disc;
+}
+
+#recipe-text ol {
+  margin-left: 20px;
+  list-style-type: decimal;
+}

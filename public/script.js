@@ -23,11 +23,21 @@ generate_recipe.addEventListener('click', async () => {
   close_recipe.style.display = "block";
 });
 
-close_recipe.addEventListener('click', () => {
-  recipe_card.style.display = "none";
+generate_recipe.addEventListener('click', async () => {
+  if (!ingredients.value.trim() || !difficulty.value.trim() || !time.value.trim()) return;
+
+  recipe_card.style.display = "block";
   recipe_loading.style.display = "block";
-  ingredients.value = "";
-  difficulty.value = "";
-  time.value = "";
+  recipe_text.textContent = "";
   close_recipe.style.display = "none";
+
+  const res = await fetch(`/api/recipe?ingredients=${encodeURIComponent(ingredients.value)}&difficulty=${encodeURIComponent(difficulty.value)}&time=${encodeURIComponent(time.value)}`);
+  const data = await res.json();
+
+  recipe_loading.style.display = "none";
+  
+  recipe_text.innerHTML = marked.parse(data.recipe);
+
+  close_recipe.style.display = "block";
 });
+
