@@ -41,8 +41,16 @@ Aturan penting:
 
     const data = await response.json();
     console.log("API RESPONSE:", JSON.stringify(data, null, 2));
+
+    if (data.error) {
+      return res
+        .status(500)
+        .json({ recipe: `❌ Error dari API: ${data.error.message}` });
+    }
+
     const ai_recipe =
       data.choices?.[0]?.message?.content || "❌ Gagal membuat resep";
+    res.status(200).json({ recipe: ai_recipe });
 
     res.status(200).json({ recipe: ai_recipe });
   } catch (error) {
