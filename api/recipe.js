@@ -35,6 +35,7 @@ Aturan penting:
     });
 
     const data = await response.json();
+    console.log("API RESPONSE:", JSON.stringify(data, null, 2));
     const ai_recipe = data.choices?.[0]?.message?.content || "❌ Gagal membuat resep";
 
     res.status(200).json({ recipe: ai_recipe });
