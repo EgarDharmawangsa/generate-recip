@@ -96,7 +96,7 @@ button:hover {
 
 #recipe-card button {
   display: none;
-  margin-top: 1rem;
+  margin-top: 3rem;
   background-color: rgb(222, 57, 57);
 }
 
@@ -128,3 +128,4 @@ button:hover {
   margin-left: 20px;
   list-style-type: decimal;
 }
+
